@@ -11,6 +11,8 @@ require("core.lazy")
 require("cmake.cmake")
 require("config.basic")
 
+vim.cmd([[set noequalalways]])
+
 --require("config.lsp")
 --vim.deprecate = function() end --屏蔽所有弃用警告
 -- 加载 Lua 语法提示（LSP）
