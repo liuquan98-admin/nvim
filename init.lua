@@ -8,15 +8,10 @@
 vim.opt.clipboard = ""
 require("config.keymaps")
 require("core.lazy")
-require("cmake.cmake")
+--require("cmake.cmake")
 require("config.basic")
-
+require("config.option")
 vim.cmd([[set noequalalways]])
-
---require("config.lsp")
---vim.deprecate = function() end --屏蔽所有弃用警告
--- 加载 Lua 语法提示（LSP）
--- 延迟加载剪贴板，彻底解决启动卡死问题
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
 		-- 仅在进入编辑器后，才启用剪贴板

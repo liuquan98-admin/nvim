@@ -1,6 +1,6 @@
 local plugin_specs = {}
 local plugin_dirs = {
-	"plugins",
+	--"plugins",
 	"plugins/Ui",
 	"plugins/Editor",
 	"plugins/Navigation",
@@ -14,6 +14,7 @@ end
 -- 正确、不会卡死的 Lazy.nvim 配置
 require("lazy").setup({
 	spec = plugin_specs,
+	--performance = { reset_packpath = false },
 
 	-- 关闭自动检查更新（这就是卡死的元凶！）
 	checker = { --控制 Lazy.nvim 是否自动检查插件更新
@@ -35,5 +36,9 @@ require("lazy").setup({
 				"zipPlugin",
 			},
 		},
+		{
+			reset_packpath = false,
+		},
+		rocks = { enabled = false },
 	},
 })
